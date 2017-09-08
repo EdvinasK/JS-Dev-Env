@@ -28,6 +28,14 @@ $(document).ready(function(){
 	// Wont need to search the whole DOM
 	console.log($('div.left-block').html());
 	$('.footer').css('border', '2px solid #ffc266');
+
+	//----SELECTING BY ATTRIBUTE-----
+	console.log($('p[title').length);
+	console.log($('p[title="Dynamic content"]').html());
+	console.log($('input[type="text"]').length);
+
+	var inputs = $('input[type="text"]');
+	inputs.css('background-color', '#ffd966');
 });
 
 //--------------BASICS----------------------
