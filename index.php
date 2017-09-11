@@ -69,6 +69,16 @@
 			margin: 0;
 		}
 
+		div.bottom-block {
+			display: inline-block;
+		}
+
+		div.bottom-block thead tr td{
+			font-weight: bold;
+			border-top: 2px solid #ffc266;
+			border-bottom: 2px solid #ffc266;
+		}
+
 	</style>
 </head>
 <body>
@@ -91,7 +101,7 @@
 		    <p id="second-paragraph">This content will be dynamic in 2017.</p>
 		    <p>Information should be gathered from a database.</p>
 		    <p>A bit of content.</p>
-		    <p>This content will be dynamic in 2017.</p>
+		    <p title="Dynamic content">This content will be dynamic in 2017.</p>
 		    <p>Information should be gathered from a database.</p>
 		    <p>A bit of content.</p>
 		    <p>This content will be dynamic in 2017.</p>
@@ -100,7 +110,7 @@
 		<div class="right-block">
 			<p>A bit of content.</p>
 		    <p>This content will be dynamic in 2017.</p>
-		    <p>Information should be gathered from a database.</p>
+		    <p title="Database information">Information should be gathered from a database.</p>
 		    <p>A bit of content.</p>
 		    <p>This content will be dynamic in 2017.</p>
 		    <p>Information should be gathered from a database.</p>
@@ -109,32 +119,44 @@
 		    <p>Information should be gathered from a database.</p>
 		</div>
 	</div>
-	<div>
+	<div class="bottom-block">
 		<table>
 			<thead>
-				<td>Name</td>
-				<td>Surname</td>
+				<tr>
+					<td>Name</td>
+					<td>Surname</td>
+				</tr>
 			</thead>
-			<tr>
-				<td>Sam</td>
-				<td>Growberg</td>
-			</tr>
-			<tr>
-				<td>Anne</td>
-				<td>Glowbell</td>
-			</tr>
-			<tr>
-				<td>Triss</td>
-				<td>McRee</td>
-			</tr>
-			<tr>
-				<td>Cercy</td>
-				<td>Bandwuf</td>
-			</tr>
-			<tr>
-				<td>Ben</td>
-				<td>Luquis</td>
-			</tr>
+			<tbody>
+				<tr>
+					<td>Sam</td>
+					<td>Growberg</td>
+				</tr>
+				<tr>
+					<td>Anne</td>
+					<td>Glowbell</td>
+				</tr>
+				<tr>
+					<td>Triss</td>
+					<td>McRee</td>
+				</tr>
+				<tr>
+					<td>Cercy</td>
+					<td>Bandwuf</td>
+				</tr>
+				<tr>
+					<td>Ben</td>
+					<td>Luquis</td>
+				</tr>
+				<tr>
+					<td><input type="text" name="Name"></td>
+					<td><input type="text" name="Surname"></td>
+				</tr>
+				<tr>
+					<td><strong>Real Information<input type="radio" name="information-validity"></strong></td>
+					<td><strong>Fictional Information<input type="radio" name="information-validity"></strong></td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 	<div class="footer">

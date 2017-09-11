@@ -36,6 +36,13 @@ $(document).ready(function(){
 
 	var inputs = $('input[type="text"]');
 	inputs.css('background-color', '#ffd966');
+
+	//----SELECTING INPUT NODES-----
+	//: selects all inputs
+	var radioButtons = $(':input[type="radio"]');
+	radioButtons.css('background-color', '#ffd966');
+
+	$(':input[type="text"]').val('Sample');
 });
 
 //--------------BASICS----------------------
