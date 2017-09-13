@@ -79,6 +79,10 @@
 			border-bottom: 2px solid #ffc266;
 		}
 
+		.table-page-footer {
+			padding-top: 40px;
+		}
+
 	</style>
 </head>
 <body>
@@ -107,7 +111,7 @@
 		    <p>This content will be dynamic in 2017.</p>
 		    <p>Information should be gathered from a database.</p>
 		</div>
-		<div class="right-block">
+		<div class="right-block" title="news">
 			<p>A bit of content.</p>
 		    <p>This content will be dynamic in 2017.</p>
 		    <p title="Database information">Information should be gathered from a database.</p>
@@ -155,6 +159,18 @@
 				<tr>
 					<td><strong>Real Information<input type="radio" name="information-validity"></strong></td>
 					<td><strong>Fictional Information<input type="radio" name="information-validity"></strong></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="table-page-footer">
+						Page: 
+						<select class="pages">
+							<option value="1" selected="true">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						out of <span class="max-pages">1</span>
+					</td>
 				</tr>
 			</tbody>
 		</table>

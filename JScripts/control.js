@@ -39,10 +39,33 @@ $(document).ready(function(){
 
 	//----SELECTING INPUT NODES-----
 	//: selects all inputs
+	var inputs = $(':input'); // : finds all inputs including textarea
+	console.log('Typeof input: ' + (typeof inputs[1]));
+	console.log($(inputs[1]).val()); // To use val you need to wrap variable in JQuery wrapper
 	var radioButtons = $(':input[type="radio"]');
 	radioButtons.css('background-color', '#ffd966');
 
+	inputs.each(function(){
+		var elem = $(this); // Wrapped in JQuery wrapper
+		console.log(elem.val());
+		console.log(elem);
+	});
+	var pagesSpan = $('span.max-pages');
+	pagesSpan.text($('select.pages > option').length);
 	$(':input[type="text"]').val('Sample');
+
+	//----SELECTING NODES WITH ADDITIONAL TECHNIQUES-----
+	var informationDiv = $('p:contains("Information")');
+	console.log(informationDiv.html());
+
+	$('div.bottom-block table tr:even').css('background-color', '#ffd966');
+	$('div p:first-child').css('font-weight', 'bold');
+	$('div p:nth-child(2)').css('font-weight', 'bold');
+	$('div:eq(0)').css('font-weight', 'bold');
+	$('#divv div input[value^="Events"]'); // ^ means "starts with". Right now wont select anything
+	$('#divv div input[value$="Events"]'); // $ means "ends with". Right now wont select anything
+	$('#divv div input[value*="Events"]'); // * means "contains". Right now wont select anything
+	console.log($('div[title$="news"]').html());
 });
 
 //--------------BASICS----------------------
