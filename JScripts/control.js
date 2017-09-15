@@ -66,7 +66,38 @@ $(document).ready(function(){
 	$('#divv div input[value$="Events"]'); // $ means "ends with". Right now wont select anything
 	$('#divv div input[value*="Events"]'); // * means "contains". Right now wont select anything
 	console.log($('div[title$="news"]').html());
+
+	// http://codylindley.com/jqueryselectors/
 });
+
+
+
+//--------------INTERACTING WITH DOM----------------------
+$(document).ready(function(){
+	//----EACH-----
+	//var outputDiv = $('div#output-div');
+	var html = '';
+	$('div.right-block p, div.bottom-block table tr').each(function (index){
+		//outputDiv.html(outputDiv.html() + "<br />" + index + " " + $(this).text());
+		//Optimised by storing whole html string on one line instead of iterating and appdening on each loop
+		html += ("<br />" + index + " " + $(this).text());
+	});
+	var outputDiv = $('div#output-div');
+	outputDiv.html(html);
+
+	// Changing attributes
+	$('div.right-block p').attr('title', 'right-block-paragraph');
+
+	//JSON - JavaScript Object Notation
+	//JSON Map is called an object with properties
+	//Changing css attributes
+	$('div.right-block').attr({
+		title: 'block',
+		id: 'right-block'
+	});
+});
+
+
 
 //--------------BASICS----------------------
 

@@ -101,22 +101,14 @@
 	</div>
 	<div class="content">
 		<div class="left-block">
-			<p>A bit of content.</p>
-		    <p id="second-paragraph">This content will be dynamic in 2017.</p>
-		    <p>Information should be gathered from a database.</p>
-		    <p>A bit of content.</p>
-		    <p title="Dynamic content">This content will be dynamic in 2017.</p>
-		    <p>Information should be gathered from a database.</p>
-		    <p>A bit of content.</p>
-		    <p>This content will be dynamic in 2017.</p>
-		    <p>Information should be gathered from a database.</p>
+		    <div id="output-div"></div>
 		</div>
 		<div class="right-block" title="news">
 			<p>A bit of content.</p>
-		    <p>This content will be dynamic in 2017.</p>
+		    <p id="second-paragraph">This content will be dynamic in 2017.</p>
 		    <p title="Database information">Information should be gathered from a database.</p>
 		    <p>A bit of content.</p>
-		    <p>This content will be dynamic in 2017.</p>
+		    <p title="Dynamic content">This content will be dynamic in 2017.</p>
 		    <p>Information should be gathered from a database.</p>
 		    <p>A bit of content.</p>
 		    <p>This content will be dynamic in 2017.</p>
