@@ -73,7 +73,7 @@
 			display: inline-block;
 		}
 
-		div.bottom-block thead tr td{
+		div.bottom-block thead tr td {
 			font-weight: bold;
 			border-top: 2px solid #ffc266;
 			border-bottom: 2px solid #ffc266;
@@ -82,7 +82,15 @@
 		.table-page-footer {
 			padding-top: 40px;
 		}
+		
+		input{
+			background-color: #ffd966;
+		}
 
+		.highlight {
+			background-color: #ffb84d;
+			border-radius: 1px;
+		}
 	</style>
 </head>
 <body>
@@ -113,10 +121,13 @@
 		    <p>A bit of content.</p>
 		    <p>This content will be dynamic in 2017.</p>
 		    <p>Information should be gathered from a database.</p>
+		    <span class="wrapped-span">This will be wrapped</span>
+		    <span class="wrapped-span">This will be wrapped</span>
+		    <span class="wrapped-span">This will be wrapped</span>
 		</div>
 	</div>
 	<div class="bottom-block">
-		<table>
+		<table class="user-table">
 			<thead>
 				<tr>
 					<td>Name</td>
@@ -145,8 +156,8 @@
 					<td>Luquis</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="Name"></td>
-					<td><input type="text" name="Surname"></td>
+					<td><input type="text" name="Name" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="first-name"></td>
+					<td><input type="text" name="Surname" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="last-name"></td>
 				</tr>
 				<tr>
 					<td><strong>Real Information<input type="radio" name="information-validity"></strong></td>
@@ -166,6 +177,11 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="after-table-div">
+			<p>First paragraph</p>
+			<p>Second paragraph</p>
+			<p>Third paragraph</p>
+		</div>
 	</div>
 	<div class="footer">
 		<h1>Please change indexREAL.php files name to index.php if you want to use the catalog.</h1>

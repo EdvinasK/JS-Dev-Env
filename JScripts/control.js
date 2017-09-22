@@ -1,3 +1,91 @@
+//--------------INTERACTING WITH DOM----------------------
+$(document).ready(function(){
+	//----EACH-----
+	//var outputDiv = $('div#output-div');
+	var html = '';
+	$('div.right-block p, div.bottom-block table tr').each(function (index){
+		//outputDiv.html(outputDiv.html() + "<br />" + index + " " + $(this).text());
+		//Optimised by storing whole html string on one line instead of iterating and appending on each loop
+		html += ("<br />" + index + " " + $(this).text());
+	});
+	var outputDiv = $('div#output-div');
+	outputDiv.html(html);
+
+	// Changing attributes
+	$('div.right-block p').attr('title', 'right-block-paragraph');
+
+	//JSON - JavaScript Object Notation
+	//JSON Map is called an object with properties
+	//Changing css attributes
+	$('div.right-block').attr({
+		title: 'block',
+		id: 'right-block'
+	});
+
+	$('div.after-table-div p').each(function(index){
+		// Raw DOM object
+		this.title = "after-table-paragraph";
+
+		// JQuery approach to attributes
+		$(this).attr('title', 'after-table-div-paragraph');
+	});
+
+	$('div.after-table-div p').css('font-size', '20pt');
+
+
+
+
+
+	$('div.after-table-div p').attr(
+		{
+			title: 'Some title 3',
+			//style: 'font-size:14pt; background-color:yellow; color: black;'
+		}
+	) // JQuery chaining
+	.css('background-color', 'yellow')
+	.css('color', 'black')
+	.css('font-size', '20pt');
+
+
+	// Adding and removing Nodes
+
+	// append and prepend
+	var tableDiv = $('div.bottom-block');
+	tableDiv.append('<span style="color:gray">JQuery appended text</span>');
+	tableDiv.prepend('<span style="color:gray">JQuery prepended text</span>');
+	$('<br /> <span style="color:gray">JQuery appended text</span>').appendTo(tableDiv);
+	$('<span style="color:gray">JQuery prepend text</span> <br />').prependTo(tableDiv);
+
+	// Wrap
+	$('span.wrapped-span').wrap('<div class="ParentWrapper" />');
+
+	// Remove
+	$('div.ParentWrapper').remove();
+
+
+	// Chaning Styles
+	$('div.after-table-div p').attr(
+		{
+			title: 'Some title 3',
+			//style: 'font-size:14pt; background-color:yellow; color: black;'
+		}
+	) // JQuery chaining
+	.css( {'background-color': 'yellow', 
+		   'color': 'black',
+		   'font-size': '20pt'})
+	.append(' - 2017');
+
+
+	// Modifying Classes
+	//$('input[type="text"]').addClass('highlight');
+	//$('#last-name').removeClass('highlight');
+});
+
+function FocusBlur(tb){
+	$(tb).toggleClass('highlight');
+}
+
+
 //--------------SELECTORS----------------------
 
 $(document).ready(function(){
@@ -34,7 +122,7 @@ $(document).ready(function(){
 	console.log($('p[title="Dynamic content"]').html());
 	console.log($('input[type="text"]').length);
 
-	var inputs = $('input[type="text"]');
+	var inputs = $('input[type="radio"]');
 	inputs.css('background-color', '#ffd966');
 
 	//----SELECTING INPUT NODES-----
@@ -68,33 +156,6 @@ $(document).ready(function(){
 	console.log($('div[title$="news"]').html());
 
 	// http://codylindley.com/jqueryselectors/
-});
-
-
-
-//--------------INTERACTING WITH DOM----------------------
-$(document).ready(function(){
-	//----EACH-----
-	//var outputDiv = $('div#output-div');
-	var html = '';
-	$('div.right-block p, div.bottom-block table tr').each(function (index){
-		//outputDiv.html(outputDiv.html() + "<br />" + index + " " + $(this).text());
-		//Optimised by storing whole html string on one line instead of iterating and appdening on each loop
-		html += ("<br />" + index + " " + $(this).text());
-	});
-	var outputDiv = $('div#output-div');
-	outputDiv.html(html);
-
-	// Changing attributes
-	$('div.right-block p').attr('title', 'right-block-paragraph');
-
-	//JSON - JavaScript Object Notation
-	//JSON Map is called an object with properties
-	//Changing css attributes
-	$('div.right-block').attr({
-		title: 'block',
-		id: 'right-block'
-	});
 });
 
 
