@@ -175,3 +175,37 @@ window.onload = function(){
 $(document).ready(function() {
 	$('.header').html('<h1>Home</h1>');
 });
+
+
+
+
+//--------------HANDLING EVENTS----------------------
+
+$(document).ready(function() {
+	// Old fashioned way of handling events
+	// var button = document.getElementById('SubmitButton');
+
+	// For most browsers
+	// if(document.addEventListener) {
+	// 	button.addEventListener('click', function() { alert('Clicked Button'); }, false);
+	// }
+	// else { // For IE
+	// 	button.attachEvent('onclick', function() { alert('Clicked IE Button'); });
+	// }
+
+	WireEvents();
+
+
+});
+
+function WireEvents() {
+	$('#SubmitButton').click(function() {
+		var firstName = $(':input[type="text"]#first-name').val();
+		var lastName = $(':input[type="text"]#last-name').val();
+		$('div#DivOutput').html(firstName + " " + lastName);
+	});
+
+	$('.my-input').change(function() {
+		$(this).addClass('highlight');
+	});
+}

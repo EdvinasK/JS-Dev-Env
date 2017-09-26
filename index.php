@@ -156,17 +156,17 @@
 					<td>Luquis</td>
 				</tr>
 				<tr>
-					<td><input type="text" name="Name" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="first-name"></td>
-					<td><input type="text" name="Surname" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="last-name"></td>
+					<td><input type="text" class="my-input" name="Name" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="first-name"></td>
+					<td><input type="text" class="my-input" name="Surname" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="last-name"></td>
 				</tr>
 				<tr>
-					<td><strong>Real Information<input type="radio" name="information-validity"></strong></td>
-					<td><strong>Fictional Information<input type="radio" name="information-validity"></strong></td>
+					<td><strong>Real Information<input class="my-input" type="radio" name="information-validity"></strong></td>
+					<td><strong>Fictional Information<input class="my-input" type="radio" name="information-validity"></strong></td>
 				</tr>
 				<tr>
 					<td colspan="2" class="table-page-footer">
 						Page: 
-						<select class="pages">
+						<select class="pages my-input">
 							<option value="1" selected="true">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
@@ -175,8 +175,27 @@
 						out of <span class="max-pages">1</span>
 					</td>
 				</tr>
+				<tr>
+					<td><div id="DivOutput"></div></td>
+					<td><input id="SubmitButton" type="button" value="Submit" /></td>
+				</tr>
 			</tbody>
 		</table>
+		<div>
+			<table>
+				<tr>
+					<td>Comments</td>
+					<td><textarea class="my-input" rows="5" cols="60" id="comments-text-box">Textarea</textarea></td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<select id="city-select" class="my-input">
+				<option value="Vilnius" selected="true">Vilnius</option>
+				<option value="Kaunas">Kaunas</option>
+				<option value="Klaipėda">Klaipėda</option>
+			</select>
+		</div>
 		<div class="after-table-div">
 			<p>First paragraph</p>
 			<p>Second paragraph</p>
