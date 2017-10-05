@@ -91,6 +91,19 @@
 			background-color: #ffb84d;
 			border-radius: 1px;
 		}
+
+		div.bottom-block-first-table {
+			display: inline-block;
+			
+		}
+
+		div.bottom-block-second-table {
+			display: inline-block;
+		}
+
+		div.comment-div {
+			display: block;
+		}
 	</style>
 </head>
 <body>
@@ -112,6 +125,7 @@
 		    <div id="output-div"></div>
 		</div>
 		<div class="right-block" title="news">
+			<div id="my-div">This is my div.</div>
 			<p>A bit of content.</p>
 		    <p id="second-paragraph">This content will be dynamic in 2017.</p>
 		    <p title="Database information">Information should be gathered from a database.</p>
@@ -127,61 +141,123 @@
 		</div>
 	</div>
 	<div class="bottom-block">
-		<table class="user-table">
-			<thead>
-				<tr>
-					<td>Name</td>
-					<td>Surname</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Sam</td>
-					<td>Growberg</td>
-				</tr>
-				<tr>
-					<td>Anne</td>
-					<td>Glowbell</td>
-				</tr>
-				<tr>
-					<td>Triss</td>
-					<td>McRee</td>
-				</tr>
-				<tr>
-					<td>Cercy</td>
-					<td>Bandwuf</td>
-				</tr>
-				<tr>
-					<td>Ben</td>
-					<td>Luquis</td>
-				</tr>
-				<tr>
-					<td><input type="text" class="my-input" name="Name" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="first-name"></td>
-					<td><input type="text" class="my-input" name="Surname" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="last-name"></td>
-				</tr>
-				<tr>
-					<td><strong>Real Information<input class="my-input" type="radio" name="information-validity"></strong></td>
-					<td><strong>Fictional Information<input class="my-input" type="radio" name="information-validity"></strong></td>
-				</tr>
-				<tr>
-					<td colspan="2" class="table-page-footer">
-						Page: 
-						<select class="pages my-input">
-							<option value="1" selected="true">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-						</select>
-						out of <span class="max-pages">1</span>
-					</td>
-				</tr>
-				<tr>
-					<td><div id="DivOutput"></div></td>
-					<td><input id="SubmitButton" type="button" value="Submit" /></td>
-				</tr>
-			</tbody>
-		</table>
-		<div>
+		<div class="bottom-block-first-table">
+			<table class="user-table">
+				<thead>
+					<tr>
+						<td>Name</td>
+						<td>Surname</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Sam</td>
+						<td>Growberg</td>
+					</tr>
+					<tr>
+						<td>Anne</td>
+						<td>Glowbell</td>
+					</tr>
+					<tr>
+						<td>Triss</td>
+						<td>McRee</td>
+					</tr>
+					<tr>
+						<td>Cercy</td>
+						<td>Bandwuf</td>
+					</tr>
+					<tr>
+						<td>Ben</td>
+						<td>Luquis</td>
+					</tr>
+					<tr>
+						<td><input type="text" class="my-input" name="Name" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="first-name"></td>
+						<td><input type="text" class="my-input" name="Surname" onfocus="FocusBlur(this)" onblur="FocusBlur(this)" id="last-name"></td>
+					</tr>
+					<tr>
+						<td><strong>Real Information<input class="my-input" type="radio" name="information-validity"></strong></td>
+						<td><strong>Fictional Information<input class="my-input" type="radio" name="information-validity"></strong></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="table-page-footer">
+							Page: 
+							<select class="pages my-input">
+								<option value="1" selected="true">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+							out of <span class="max-pages">1</span>
+						</td>
+					</tr>
+					<tr>
+						<td><div id="DivOutput"></div></td>
+						<td><input id="SubmitButton" type="button" value="Submit" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<br>
+
+		<div class="bottom-block-second-table">
+			<div id="selected-country-city"></div>
+			
+			<br />
+			<div>Country name: <input id="insert-country-name" type="text" name="country"></div>
+			<div>Capital City name: <input id="insert-capital-city-name" type="text" name="capital-city"></div>
+			<button class="add-row">Add Row</button>
+			<button class="show-ajax-page">Show HTML</button>
+			<table class="user-table-2">
+				<thead>
+					<tr>
+						<td>Country</td>
+						<td>Capital City</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Lithuania</td>
+						<td>Vilnius</td>
+					</tr>
+					<tr>
+						<td>Latvia</td>
+						<td>Riga</td>
+					</tr>
+					<tr>
+						<td>Estonia</td>
+						<td>Tallinn</td>
+					</tr>
+					<tr>
+						<td>Denmark</td>
+						<td>Copenhagen</td>
+					</tr>
+					<tr>
+						<td>Norway</td>
+						<td>Oslo</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="2" class="table-page-footer">
+							Page: 
+							<select class="pages my-input">
+								<option value="1" selected="true">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+							</select>
+							out of <span class="max-pages">1</span>
+						</td>
+					</tr>
+					<tr>
+						<td><input id="SubmitButton" type="button" value="Submit" /></td>
+					</tr>
+				</tfoot>
+			</table>
+			<div id="DivOutput"></div>
+		</div>
+
+		<div class="comment-div">
 			<table>
 				<tr>
 					<td>Comments</td>
@@ -202,9 +278,9 @@
 			<p>Third paragraph</p>
 		</div>
 	</div>
-	<div class="footer">
+	<!-- <div class="footer">
 		<h1>Please change indexREAL.php files name to index.php if you want to use the catalog.</h1>
-	</div>
+	</div> -->
 </div>
 </body>
 </html>

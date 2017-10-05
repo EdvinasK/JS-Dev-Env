@@ -52,7 +52,7 @@ $(document).ready(function(){
 	// append and prepend
 	var tableDiv = $('div.bottom-block');
 	tableDiv.append('<span style="color:gray">JQuery appended text</span>');
-	tableDiv.prepend('<span style="color:gray">JQuery prepended text</span>');
+	tableDiv.prepend('<span style="color:gray">JQuery prepended text</span><br />');
 	$('<br /> <span style="color:gray">JQuery appended text</span>').appendTo(tableDiv);
 	$('<span style="color:gray">JQuery prepend text</span> <br />').prependTo(tableDiv);
 
@@ -207,5 +207,86 @@ function WireEvents() {
 
 	$('.my-input').change(function() {
 		$(this).addClass('highlight');
+	});
+
+	// $('#my-div, tr').mouseenter(function() {
+	// 	Toggle(this);
+	// 	$(this).css('cursor', 'pointer');
+	// })
+	// .mouseleave(function() {
+	// 	Toggle(this);
+	// })
+	// .mouseup(function (e) {
+	// 	alert($(e.target).attr('id'));
+	// 	$(this).text('X: ' + e.pageX + " Y: " + e.pageY);
+	// });
+
+	// function Toggle(div) {
+	// 	$(div).toggleClass('highlight');
+	// }
+
+
+
+	// bind() and on()
+	$('#my-div').on('mouseenter mouseleave mouseup', function(e) {
+		$(this).toggleClass('highlight');
+		$(this).css('cursor', 'pointer');
+		if (e.type == 'mouseup') {
+			$(this).text('X: ' + e.pageX + ' Y: ' + e.pageY);
+		}
+	});
+
+	var countryTable = $('table.user-table-2 tbody');
+
+	countryTable.on('click', 'td', function(){
+		alert($(this).text());
+	});
+
+	$('.add-row').on('click', function() {
+		//countryTable.find('tbody').on();
+		var countryName = $('#insert-country-name');
+		var capitalCityName = $('#insert-capital-city-name');
+
+		if(countryName.val()  && capitalCityName.val()){
+			countryTable.append('<tr><td>' + countryName.val() + '</td><td>' + capitalCityName.val() + '</td></tr>');
+			countryName.val('');
+			capitalCityName.val('');
+		}
+	});
+
+	// $('table.user-table-2 tr').hover(
+	// 	function(){
+	// 		// Mouse enter
+	// 		$(this).css('background-color', '#ffc266');
+	// 	},
+	// 	function(){
+	// 		// Mouse leave
+	// 		$(this).css('background-color', '#ffebcc');
+	// 	});
+
+	$('table.user-table-2 tr').hover(function(){
+		$(this).toggleClass('highlight');
+	});
+
+	// Toggle works like switch and changes on each click
+	// $('table.user-table-2 tr').toggle(
+	// 	function(){
+	// 		$(this).css('background-color', '#ffc266');
+	// 	},
+	// 	function(){
+	// 		$(this).css('background-color', '#efefef');
+	// 	},
+	// 	function(){
+	// 		$(this).css('background-color', '#fff');
+	// 	},
+	// 	function(){
+	// 		$(this).css('background-color', '#eee');
+	// 	});
+
+	//$('#my-div').off();
+
+	$('button.show-ajax-page').click(function() {
+		// Load HTML from HelpDetails
+		$('#DivOutput').load('./ajaxAdditionalPage.html #SubTOC');
 	});
 }
